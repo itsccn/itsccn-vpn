@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+    vpn:
+        image: itsccn/vpn-server
+        container_name: vpn-server
+        env_file: 
+         - ./env/vpn.env    
+        ports:
+         - "500:500/udp"
+         - "4500:4500/udp"
+        restart: always
+        privileged: true
+
+
